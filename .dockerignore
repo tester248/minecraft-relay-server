@@ -1,0 +1,5 @@
+.git
+.github
+build
+mcrelay.log
+*.pid

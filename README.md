@@ -82,3 +82,34 @@ It's compatible with any server which support this protocol. (e.g. Bungeecord)
 
 ### Bungeecord
 To use this feature correctly, turn on the "proxy_protocol" in the "config.yml". ("false" to "true")
+
+## Deploy to Railway
+This repository includes a Docker deployment path for Railway with environment-based runtime config generation.
+
+### Files used for Railway
+* Dockerfile
+* deploy/railway/entrypoint.sh
+* .dockerignore
+
+### Required Railway variables
+* TARGET_HOST: Hostname of the real upstream server. Example: stevegaming.sdlf.fun
+
+### Optional Railway variables
+* TARGET_PORT: Upstream port. Default: 25565
+* VHOSTS: Comma-separated allowed incoming hostnames. Default: TARGET_HOST
+* PORT: Railway service port; automatically provided by Railway in most setups
+* LISTEN_PORT: Used only when PORT is not set. Default: 25565
+* LISTEN_ADDRESS: Default: 0.0.0.0
+* NET_PROTOCOL: IPv4 or IPv6. Default: IPv4
+* REWRITE: true or false. Default: true
+* PHEADER: true or false. Default: false
+* LOG_LEVEL: Default: 2
+
+### Railway setup steps
+1. Push this repository to GitHub.
+2. In Railway, create a new project from that GitHub repository.
+3. Railway will detect Dockerfile and build automatically.
+4. Set TARGET_HOST to your upstream server hostname.
+5. Set VHOSTS to the hostnames clients will use, for example: stevegaming.sdlf.fun
+6. Redeploy.
+7. Open the generated TCP endpoint in Railway and connect your Minecraft client to that host and port.
