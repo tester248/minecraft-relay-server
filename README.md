@@ -94,6 +94,7 @@ This repository includes a Docker deployment path for Railway with environment-b
 ### Required Railway variables
 * TARGET_HOST: Hostname of the real upstream server. Example: mc.yourserver.net
 * TARGET_PORT: The port number eg. 25565
+* VHOSTS: Comma-separated allowed incoming hostnames (Make sure to add the railway tcp endpoint hostname here, and any other hostname you're connecting with)
 
 ### Optional Railway variables
 * TARGET_PORT: Upstream port. Default: 25565
