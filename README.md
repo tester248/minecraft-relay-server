@@ -92,7 +92,8 @@ This repository includes a Docker deployment path for Railway with environment-b
 * .dockerignore
 
 ### Required Railway variables
-* TARGET_HOST: Hostname of the real upstream server. Example: stevegaming.sdlf.fun
+* TARGET_HOST: Hostname of the real upstream server. Example: mc.yourserver.net
+* TARGET_PORT: The port number eg. 25565
 
 ### Optional Railway variables
 * TARGET_PORT: Upstream port. Default: 25565
